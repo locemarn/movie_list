@@ -1,0 +1,35 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A Nodejs API with express",
+  "main": "server.js",
+  "scripts": {
+    "start": "babel-node ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/locemarn/movie_list.git"
+  },
+  "keywords": [
+    "API",
+    "Node",
+    "JavaScript"
+  ],
+  "author": "Marcelo Nogueira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/locemarn/movie_list/issues"
+  },
+  "homepage": "https://github.com/locemarn/movie_list#readme",
+  "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
