@@ -1,20 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default class Header extends Component {
-  render() {
-    return (
-      <div>
-        <nav>
-        <div className="left">
-          <a className="btn-floating btn-large waves-effect waves-light" href="!#">
-            <i className="material-icons teal">home</i>
-          </a>
+const Header = props => {
+  return (
+    <div>
+      <nav>
+        <div className="right">
+          <ul>
+            <Link to="/" class="waves-effect waves-light btn-large teal darken-2"><i className="material-icons right">home</i>Home</Link>
+            <Link to="/movies" class="waves-effect waves-light btn-large teal darken-2"><i className="material-icons right">local_movies</i>Movies</Link>
+            <Link to="/about" class="waves-effect waves-light btn-large teal darken-2"><i className="material-icons right">info</i>About</Link>
+          </ul>
         </div>
         <div className="nav-wrapper teal">
           <a href="#!" className="brand-logo center">Fakeflix</a>
         </div>
       </nav>
-      </div>
-    )
-  }
+    </div>
+  )
 }
+
+export default Header
