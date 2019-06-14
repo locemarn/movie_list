@@ -1,0 +1,6 @@
+--require @babel/register
+--require @babel/polyfill
+--require test/unit/helpers.js
+--reporter spec
+--slow 5000
+--exit
