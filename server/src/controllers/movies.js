@@ -11,8 +11,49 @@ class MoviesController {
       const page = 1
 
       let getdata = await this.getData(title, page, res)
+      let data = []
+      let back = {
+        moviesByYear: [],
+        total: 0
+      }
 
-      res.status(200).send(getdata)
+      for (let i = getdata.page; i < getdata.total_pages; i++) {
+        let r = await this.getData(title, i, res)
+        data.push(r.data)
+      }
+      data = data.reduce((a, b) => a.concat(b))
+
+      let categories = []
+      for (let obj of data) {
+        if (!categories.includes(obj.Year)) {
+          categories.push(obj.Year)
+        }
+      }
+
+      categories = categories.sort()
+
+      let year = categories.map(cat => {
+        let dt = data.filter(fil => {
+          return fil.Year === cat
+        })
+        return dt
+      })
+
+      let count = []
+
+      for (let i = 0; i < year.length; i++) {
+        count.push(year[i].length)
+      }
+
+      for (let i = 0; i < count.length; i++) {
+        back.moviesByYear.push({
+          year: categories[i],
+          Movies: count[i]
+        })
+        back.total = getdata.total
+      }
+
+      res.status(200).send(back)
     } catch (error) {
       return res.status(400).send(error.message)
     }
