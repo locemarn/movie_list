@@ -11,6 +11,7 @@ class MoviesController {
       const page = 1
 
       let getdata = await this.getData(title, page, res)
+
       let data = []
       let back = {
         moviesByYear: [],
@@ -53,9 +54,9 @@ class MoviesController {
         back.total = getdata.total
       }
 
-      res.status(200).send(back)
+      res.status(200).json(back)
     } catch (error) {
-      return res.status(400).send(error.message)
+      return res.status(200).send({ message: 'No movies found!' })
     }
   }
 
