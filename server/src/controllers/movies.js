@@ -8,53 +8,35 @@ class MoviesController {
   async getMovie (req, res) {
     try {
       const title = req.params.title
-      const page = 1
+      const initialPage = 1
 
-      let getdata = await this.getData(title, page, res)
+      let { page, total_pages: totalPages, total } = await this.getData(
+        title,
+        initialPage,
+        res
+      )
 
-      let data = []
-      let back = {
-        moviesByYear: [],
-        total: 0
-      }
-
-      for (let i = getdata.page; i < getdata.total_pages; i++) {
+      let movies = []
+      for (let i = page; i <= totalPages; i++) {
         let r = await this.getData(title, i, res)
-        data.push(r.data)
-      }
-      data = data.reduce((a, b) => a.concat(b))
 
-      let categories = []
-      for (let obj of data) {
-        if (!categories.includes(obj.Year)) {
-          categories.push(obj.Year)
-        }
+        movies.push(...r.data)
       }
 
-      categories = categories.sort()
+      const allYears = [...new Set(movies.map(({ Year }) => Year))].sort()
 
-      let year = categories.map(cat => {
-        let dt = data.filter(fil => {
-          return fil.Year === cat
-        })
-        return dt
-      })
+      const counter = allYears.map(y =>
+        movies.filter(mv => mv.Year === y).reduce(acc => ++acc, 0)
+      )
 
-      let count = []
+      const moviesByYear = allYears.map((year, index) => ({
+        year,
+        movies: counter[index]
+      }))
 
-      for (let i = 0; i < year.length; i++) {
-        count.push(year[i].length)
-      }
+      const response = { moviesByYear, total }
 
-      for (let i = 0; i < count.length; i++) {
-        back.moviesByYear.push({
-          year: categories[i],
-          Movies: count[i]
-        })
-        back.total = getdata.total
-      }
-
-      res.status(200).json(back)
+      res.status(200).json(response)
     } catch (error) {
       return res.status(200).send({ message: 'No movies found!' })
     }
