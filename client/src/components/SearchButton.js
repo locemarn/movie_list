@@ -6,7 +6,7 @@ export default class SearchButton extends Component {
       <div>
         <button
           onClick={this.props.clickHandler}
-          className="waves-effect waves-light btn"
+          className="waves-effect waves-light btn margin"
         >
           Search
         </button>
