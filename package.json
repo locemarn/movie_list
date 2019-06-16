@@ -4,12 +4,15 @@
   "description": "A Nodejs API with express",
   "main": "server.js",
   "scripts": {
+    "client:install": "cd client && npm install",
     "lint": "./node_modules/.bin/prettier-eslint 'server.js' && ./node_modules/.bin/prettier-eslint 'src/**/*.js' && ./node_modules/.bin/prettier-eslint 'test/**/*.js'",
     "lint:fix": "./node_modules/.bin/prettier-eslint 'server.js' --write && ./node_modules/.bin/prettier-eslint 'src/**/*.js' --write && ./node_modules/.bin/prettier-eslint 'test/**/*.js' --write",
     "start": "nodemon --exec babel-node ./server.js",
     "test": "npm run test:unit && npm run test:integration",
     "test:integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*.js",
-    "test:unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*.js"
+    "test:unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run start\" \"npm run client\""
   },
   "husky": {
     "hooks": {
@@ -45,6 +48,7 @@
     "@babel/preset-env": "^7.4.5",
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
+    "concurrently": "^4.1.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
