@@ -1,26 +1,47 @@
-# Project Title
-One Paragraph of project description goes here
+# Fakeflix
+This is a project maked by Senior/Mega challenge.
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 ### Prerequisites
-What things you need to install the software and how to install them
-```
-Give examples
-```
+To run this project, is necessary be in your computer NodeJs, npm and git.
+You can get all instructions to install [Node and npm](https://nodejs.org/en/) and [Git](https://git-scm.com/).
+
 ### Installing
-A step by step series of examples that tell you how to get a development env running
-Say what the step will be
+With all prerequisites, is necessary clone this project. Choose the paste in your coputer where the project will be installed and run the comand in your command line.
 ```
-Give the example
+git clone https://github.com/locemarn/movie_list.git
 ```
-And repeat
+and go to paste with
 ```
-until finished
+cd movie_list
 ```
-End with an example of getting some data out of the system or using it for a little demo
+
+After that, you will need to install all dependenies in backend and frontend.
+In backend, run the command
+```
+npm install
+```
+and run
+```
+npm run client:install
+```
+to install all client dependencies.
+
+With all depencies and dev-depencies isntalled, is necessary run the nex command to run the app in developer mode.
+```
+npm run dev
+```
+
+this command will be run de server and client automatically.
+!()[http://giphygifs.s3.amazonaws.com/media/LZ3wZsmRQgdl1ElrDq/giphy.gif]
+
 ## Running the tests
-Explain how to run the automated tests for this system
-### Break down into end to end tests
+For run unit and integration tests in backend, run
+```
+npm run test
+```
+
+<!-- ### Break down into end to end tests
 Explain what these tests test and why
 ```
 Give an example
@@ -35,17 +56,14 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds -->
 ## Contributing
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-## Versioning
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+Please read [CONTRIBUTING.md](https://github.com/locemarn/movie_list/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+<!-- ## Versioning
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). -->
 ## Authors
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Marcelo Nogueira**
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 ## Acknowledgments
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Jesus and Family
