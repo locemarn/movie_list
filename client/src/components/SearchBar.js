@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const SearchBar = props => {
   return (
@@ -13,7 +13,7 @@ const SearchBar = props => {
         <label htmlFor="first_name">Movie</label>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;
