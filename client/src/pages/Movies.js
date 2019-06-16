@@ -6,13 +6,13 @@ import Loading from "../components/Loading";
 
 export default function Movies() {
   const [searchText, setSearchText] = useState("");
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
 
   function onTextChange(e) {
     const val = e.target.value;
     if (val === "") {
-      setData([]);
+      setData({});
     }
     setSearchText(val);
   }
@@ -27,6 +27,7 @@ export default function Movies() {
       .then(mov => {
         setData(mov);
         setLoading(false);
+        console.log(mov);
       })
       .catch(err => console.log(err));
   }
@@ -38,6 +39,7 @@ export default function Movies() {
       <SearchButton clickHandler={onClickHandler} text="Search" />
       {loading && <Loading />}
       <List data={data} />
+      <h1>Total: {data.total ? data.total : 0}</h1>
     </div>
   );
 }
