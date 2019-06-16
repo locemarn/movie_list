@@ -34,8 +34,8 @@ export default function Movies() {
   return (
     <div>
       <h1>Search Movie</h1>
-      <SearchBar changeText={onTextChange} />
-      <SearchButton clickHandler={onClickHandler} />
+      <SearchBar changeText={onTextChange} placeholder="Movie" />
+      <SearchButton clickHandler={onClickHandler} text="Search" />
       {loading && <Loading />}
       <List data={data} />
     </div>

@@ -1,16 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
-export default class SearchButton extends Component {
-  render() {
-    return (
-      <div>
-        <button
-          onClick={this.props.clickHandler}
-          className="waves-effect waves-light btn margin"
-        >
-          Search
-        </button>
-      </div>
-    );
-  }
-}
+const SearchButton = props => {
+  const { text, clickHandler } = props;
+  return (
+    <div>
+      <button
+        onClick={clickHandler}
+        className="waves-effect waves-light btn margin"
+      >
+        {text}
+      </button>
+    </div>
+  );
+};
+
+SearchButton.propTypes = {
+  text: PropTypes.string.isRequired,
+  clickHandler: PropTypes.func.isRequired
+};
+
+export default SearchButton;
