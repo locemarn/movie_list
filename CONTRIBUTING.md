@@ -5,4 +5,4 @@
 4. Push to the branch: `git push origin my-new-feature`
 *Remember that we have a pre-push hook with steps that analyzes and prevents mistakes.*
 **After your pull request is merged**, you can safely delete your branch.
-### [<-- Back](https://github.com/lyef/lyef-react-component/)
+### [<-- Back](https://github.com/locemarn/movie_list)
