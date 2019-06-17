@@ -5,14 +5,16 @@ export default class About extends Component {
     return (
       <div>
         <h1>About App</h1>
-        <p>This is a web app maked to the Senior/Mega challenge.</p>
         <p>
-          This app was made in NodeJS backend, consuming a external API and send
-          to other API format.
+          This is a web application designed for the Senior / Mega challenge.
         </p>
         <p>
-          In frontend, this backend API is consumed with a single page
-          application with ReactJS for show all data requested.
+          This application was made in the NodeJS backend, consuming the
+          external API and sending it to another API format.
+        </p>
+        <p>
+          In the frontend, this back-end API is consumed with a single-page
+          application with ReactJS to display all requested data.
         </p>
       </div>
     );

@@ -10,8 +10,8 @@ export default class Home extends Component {
               <div className="card-content white-text">
                 <span className="card-title">Fakeflix</span>
                 <p>
-                  Welcome to the Fakeflix. Go to our Movies page to search a
-                  film by name and get all informations about.
+                  Welcome to Fakeflix. Go to our Movies page to search for a
+                  movie by name and get all information about.
                 </p>
               </div>
             </div>
