@@ -19,7 +19,7 @@ export default function Movies() {
 
   function onClickHandler(e) {
     e.preventDefault();
-
+    setData({});
     setLoading(true);
 
     fetch(`/api/movies/count/${searchText}`)
@@ -27,7 +27,6 @@ export default function Movies() {
       .then(mov => {
         setData(mov);
         setLoading(false);
-        console.log(mov);
       })
       .catch(err => console.log(err));
   }

@@ -5,10 +5,7 @@ const SearchButton = props => {
   const { text, clickHandler } = props;
   return (
     <div>
-      <button
-        onClick={clickHandler}
-        className="waves-effect waves-light btn margin"
-      >
+      <button onClick={clickHandler} className="waves-effect waves-light btn">
         {text}
       </button>
     </div>
