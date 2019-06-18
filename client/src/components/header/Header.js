@@ -1,7 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import MenuHeader from "./menuHeader";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const Header = props => {
+  const { title } = props;
   return (
     <div>
       <nav>
@@ -11,27 +14,24 @@ const Header = props => {
               <i className="material-icons">menu</i>
             </a>
             <ul className="right hide-on-med-and-down">
-              <Link to="/" className="waves-effect waves-light btn-large teal darken-2">
-                <i className="material-icons right">home</i>
-                Home
-              </Link>
-              <Link to="/movies" className="waves-effect waves-light btn-large teal darken-2">
-                <i className="material-icons right">local_movies</i>
-                Movies
-              </Link>
-              <Link to="/about" className="waves-effect waves-light btn-large teal darken-2">
-                <i className="material-icons right">info</i>
-                About
-              </Link>
+              <MenuHeader text="Home" icon="home" to="/" />
+              <MenuHeader text="Movies" icon="local_movies" to="/movies" />
+              <MenuHeader text="About" icon="info" to="/about" />
             </ul>
           </div>
           <div className="nav-wrapper teal">
-            <Link to="/" className="brand-logo center">Fakeflix</Link>
+            <Link to="/" className="brand-logo center">
+              {title}
+            </Link>
           </div>
         </div>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+Header.propTypes = {
+  title: PropTypes.string.isRequired
+};
+
+export default Header;
