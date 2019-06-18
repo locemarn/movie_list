@@ -1,5 +1,6 @@
 import React from "react";
 import "./Badget.css";
+import PropTypes from "prop-types";
 
 const Badget = props => {
   const { msg, color } = props;
@@ -21,6 +22,11 @@ const Badget = props => {
       </ul>
     </div>
   );
+};
+
+Badget.propTypes = {
+  msg: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired
 };
 
 export default Badget;
