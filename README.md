@@ -1,4 +1,3 @@
-<h1 align="center">Logo</h1>
 # Fakeflix
 This is a project maked by Senior/Mega challenge.
 ## Getting Started
